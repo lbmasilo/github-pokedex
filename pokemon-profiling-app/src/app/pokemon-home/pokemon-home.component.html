@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="input-group">
+        <input type="text" [(ngModel)]="term" class="form-control" placeholder="Search pokemon by name">
+      </div>
+
+    <div class="pokemon-item">
+        <div class="box" *ngFor="let item of pokemonList[0] | filter:term | paginate: { itemsPerPage: 10, currentPage: currentPage, totalItems: totalList }"> 
+            <a routerLink="/info/{{item.name}}">
+                <img [src]="item.sprites.front_default" alt="Pokemon">
+                <h3>{{ item.name }}</h3>
+            </a>
+        </div>
+    </div>
+</div>
+<pagination-controls (pageChange)="currentPage = $event; pokemonList = []; getPokemonItems()"></pagination-controls>

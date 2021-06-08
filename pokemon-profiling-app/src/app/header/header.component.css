@@ -1,0 +1,13 @@
+header{
+    padding: 5px 0px;
+    text-align: center;
+    background-color: rgb(35, 18, 63);
+}
+header h1{
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 2px;
+}
+.view-more{
+    background-color: rgb(148, 24, 24);
+}
